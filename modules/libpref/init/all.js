@@ -4234,7 +4234,7 @@ pref("canvas.image.cache.limit", 0);
 
 // Allow track-fobics to deliberately poison canvas data for
 // toDataURL() and getImageData()
-pref("canvas.poisondata", false);
+pref("canvas.poisondata", true);
 
 // WebGL prefs
 pref("gl.msaa-level", 2);
