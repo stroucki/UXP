@@ -304,6 +304,11 @@ Navigator::GetUserAgent(nsAString& aUserAgent)
 NS_IMETHODIMP
 Navigator::GetAppCodeName(nsAString& aAppCodeName)
 {
+// XXXstroucki user agent
+// lie
+aAppCodeName.assignLiteral("AppCodeName");
+return NS_OK;
+
   nsresult rv;
 
   nsCOMPtr<nsIHttpProtocolHandler>
@@ -437,6 +442,11 @@ Navigator::GetOscpu(nsAString& aOSCPU)
     }
   }
 
+// XXXstroucki user agent
+// lie
+aOSCPU.assignLiteral("OSCPU");
+return NS_OK;
+
   nsresult rv;
 
   nsCOMPtr<nsIHttpProtocolHandler>
@@ -467,6 +477,7 @@ Navigator::GetVendorSub(nsAString& aVendorSub)
 NS_IMETHODIMP
 Navigator::GetProduct(nsAString& aProduct)
 {
+// XXXstroucki user agent
   aProduct.AssignLiteral("Gecko");
   return NS_OK;
 }
@@ -474,6 +485,7 @@ Navigator::GetProduct(nsAString& aProduct)
 NS_IMETHODIMP
 Navigator::GetProductSub(nsAString& aProductSub)
 {
+// XXXstroucki user agent
   // Legacy build ID hardcoded for backward compatibility (bug 776376)
   aProductSub.AssignLiteral("20100101");
   return NS_OK;
@@ -1381,6 +1393,11 @@ Navigator::GetPlatform(nsAString& aPlatform, bool aUsePrefOverriddenValue)
     }
   }
 
+// XXXstroucki user agent
+// lie
+aPlatform.assignLiteral("Win64");
+return NS_OK;
+
   nsresult rv;
 
   nsCOMPtr<nsIHttpProtocolHandler>
@@ -1425,6 +1442,11 @@ Navigator::GetAppVersion(nsAString& aAppVersion, bool aUsePrefOverriddenValue)
     }
   }
 
+// XXXstroucki user agent
+// lie
+aAppVersion.assignLiteral("appversion");
+return NS_OK;
+
   nsresult rv;
 
   nsCOMPtr<nsIHttpProtocolHandler>
@@ -1461,6 +1483,7 @@ Navigator::AppName(nsAString& aAppName, bool aUsePrefOverriddenValue)
       return;
     }
   }
+// XXXstroucki user agent
 
   aAppName.AssignLiteral("Netscape");
 }
@@ -1476,6 +1499,8 @@ Navigator::GetUserAgent(nsPIDOMWindowInner* aWindow, nsIURI* aURI,
                         bool aIsCallerChrome,
                         nsAString& aUserAgent)
 {
+// XXXstroucki user agent
+// default in netwerk/protocol/http/nsHttpHandler.cpp
   MOZ_ASSERT(NS_IsMainThread());
 
   nsresult rv;

@@ -450,6 +450,7 @@ nsHttpHandler::AddStandardRequestHeaders(nsHttpRequestHead *request,
     nsresult rv;
 
     // Add the "User-Agent" header
+// XXXstroucki user agent
     rv = request->SetHeader(nsHttp::User_Agent, UserAgent(),
                             false, nsHttpHeaderArray::eVarietyRequestDefault);
     if (NS_FAILED(rv)) return rv;
@@ -714,6 +715,9 @@ nsHttpHandler::BuildUserAgent()
                            mDeviceModelId.Length() +
                            14);
 
+// XXXstroucki user agent
+// mUserAgent.Assign("");return;
+
     // Application portion
     mUserAgent.Assign(mLegacyAppName);
     mUserAgent += '/';
@@ -778,6 +782,7 @@ nsHttpHandler::BuildUserAgent()
 void
 nsHttpHandler::InitUserAgentComponents()
 {
+// XXXstroucki user agent
 #ifndef MOZ_UA_OS_AGNOSTIC
     // Gather platform.
     mPlatform.AssignLiteral(
