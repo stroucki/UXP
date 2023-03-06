@@ -23,6 +23,7 @@ interface HTMLCanvasElement : HTMLElement {
   [Throws]
   nsISupports? getContext(DOMString contextId, optional any contextOptions = null);
 
+// XXXstroucki canvas exfiltration deny these?
   [Throws]
   DOMString toDataURL(optional DOMString type = "",
                       optional any encoderOptions);
