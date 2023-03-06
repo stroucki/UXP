@@ -4265,7 +4265,7 @@ pref("canvas.image.cache.limit", 0);
 
 // Allow track-fobics to deliberately poison canvas data for
 // toDataURL() and getImageData()
-pref("canvas.poisondata", false);
+pref("canvas.poisondata", true);
 // Rotate randomness of data poisoning every n seconds. Default 5 minutes.
 // Valid range [1..28800] (1s-8h).
 pref("canvas.poisondata.interval", 300);

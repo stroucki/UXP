@@ -4981,9 +4981,13 @@ nsDocShell::DisplayLoadError(nsresult aError, nsIURI* aURI,
 
         // HSTS takes precedence over the expert bad cert pref. We
         // never want to show the "Add Exception" button for these sites.
+        // XXXstroucki it is my browser and I do want to be able to make
+        // an exception to cert issues
+/*
         if (isStsHost) {
           cssClass.AssignLiteral("badStsCert");
         }
+*/
 
         // See if an alternate cert error page is registered
         nsAdoptingCString alternateErrorPage =
