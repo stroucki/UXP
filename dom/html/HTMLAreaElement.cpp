@@ -203,6 +203,8 @@ HTMLAreaElement::ToString(nsAString& aSource)
 NS_IMETHODIMP
 HTMLAreaElement::GetPing(nsAString& aValue)
 {
+// XXXstroucki ping deny access
+return NS_ERROR_OUT_OF_MEMORY;
   GetAttr(kNameSpaceID_None, nsGkAtoms::ping, aValue);
   return NS_OK;
 }
@@ -210,6 +212,8 @@ HTMLAreaElement::GetPing(nsAString& aValue)
 NS_IMETHODIMP
 HTMLAreaElement::SetPing(const nsAString& aValue)
 {
+// XXXstroucki ping deny access
+return NS_ERROR_OUT_OF_MEMORY;
   return SetAttr(kNameSpaceID_None, nsGkAtoms::ping, aValue, true);
 }
 
