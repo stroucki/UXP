@@ -340,7 +340,7 @@ NS_IMETHODIMP
 HTMLAnchorElement::GetPing(nsAString& aValue)
 {
 // XXXstroucki ping deny access
-return NS_OUT_OF_MEMORY;
+return NS_ERROR_OUT_OF_MEMORY;
   GetAttr(kNameSpaceID_None, nsGkAtoms::ping, aValue);
   return NS_OK;
 }
@@ -349,7 +349,7 @@ NS_IMETHODIMP
 HTMLAnchorElement::SetPing(const nsAString& aValue)
 {
 // XXXstroucki ping deny access
-return NS_OUT_OF_MEMORY;
+return NS_ERROR_OUT_OF_MEMORY;
   return SetAttr(kNameSpaceID_None, nsGkAtoms::ping, aValue, true);
 }
 
