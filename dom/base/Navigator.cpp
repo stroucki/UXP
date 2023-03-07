@@ -306,7 +306,7 @@ Navigator::GetAppCodeName(nsAString& aAppCodeName)
 {
 // XXXstroucki user agent
 // lie
-aAppCodeName.assignLiteral("AppCodeName");
+aAppCodeName.AssignLiteral("AppCodeName");
 return NS_OK;
 
   nsresult rv;
@@ -444,7 +444,7 @@ Navigator::GetOscpu(nsAString& aOSCPU)
 
 // XXXstroucki user agent
 // lie
-aOSCPU.assignLiteral("OSCPU");
+aOSCPU.AssignLiteral("OSCPU");
 return NS_OK;
 
   nsresult rv;
@@ -1395,7 +1395,7 @@ Navigator::GetPlatform(nsAString& aPlatform, bool aUsePrefOverriddenValue)
 
 // XXXstroucki user agent
 // lie
-aPlatform.assignLiteral("Win64");
+aPlatform.AssignLiteral("Win64");
 return NS_OK;
 
   nsresult rv;
@@ -1444,7 +1444,7 @@ Navigator::GetAppVersion(nsAString& aAppVersion, bool aUsePrefOverriddenValue)
 
 // XXXstroucki user agent
 // lie
-aAppVersion.assignLiteral("appversion");
+aAppVersion.AssignLiteral("appversion");
 return NS_OK;
 
   nsresult rv;
