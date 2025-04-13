@@ -19,7 +19,7 @@
 namespace rtc {
 
 static const char* kCoreGraphicsName =
-    "/System/Library/Frameworks/ApplicationServices.framework/Frameworks/"
+    "/System/Library/Frameworks/"
     "CoreGraphics.framework/CoreGraphics";
 
 static const char* kWindowListCopyWindowInfo = "CGWindowListCopyWindowInfo";
