@@ -717,6 +717,8 @@ nsHttpHandler::BuildUserAgent()
 
 // XXXstroucki user agent
 // mUserAgent.Assign("");return;
+// lie
+mUserAgent.Assign("Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/136.0");return;
 
     // Application portion
     mUserAgent.Assign(mLegacyAppName);
