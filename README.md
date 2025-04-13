@@ -44,3 +44,42 @@ a future for XUL.
 As of [`Issue #969`](https://repo.palemoon.org/MoonchildProductions/UXP/issues/969), release version `28.9.0`,
 applications have been split off into their own dedicated (front-end) repositories, with Pale Moon located at
 [`MoonchildProductions/Pale-Moon`](https://repo.palemoon.org/MoonchildProductions/Pale-Moon).
+
+# My modifications
+## General code changes
+
+Certain frameworks are no longer part of Application Services framework. 
+Refer to them directly.
+
+https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/OSX_Technology_Overview/SystemFrameworks/SystemFrameworks.html
+
+Write dlopen error to stderr for video codec initialization errors.
+
+The preprocessor defines in MozGrMalloc.h caused problems with C++ code 
+referring to std::malloc etc.
+
+Add my current SDK version to find_sdk_uxp.py.
+
+## Blocked DOM attributes
+
+HTMLAnchorTag ping
+HTMLAreaTag ping
+
+## Other
+
+Allow adding exceptions if HSTS is enabled.
+
+Make canvas.poisondata true by default.
+
+The default user agent is set to a common current Windoze Firefox version. 
+I don't mind promoting Palemoon, but the browser version and OS is 
+nobody's business and will likely be used to discriminate against it.
+
+## Unsolved
+
+A synology box with a self signed certificate that has not been accepted 
+before will end up in the protocol degrade path and end up with a cryptic 
+SSL_ERROR_RX_MALFORMED_SERVER_HELLO error. This does not seem to affect 
+mainstream browsers. Workaround is to disable SSL hello downgrade 
+enforcement, accept the self signed cert, then reenable downgrade 
+protection.
