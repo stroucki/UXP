@@ -12,8 +12,10 @@
 
 #include "mozilla/mozalloc.h"
 
+#if defined(XP_LINUX) && !defined(_LIBCPP_VERSION)
 #define malloc(a) moz_xmalloc(a)
 #define calloc(a, b) moz_xcalloc(a, b)
 #define realloc(a, b) moz_xrealloc(a, b)
+#endif
 
 #endif // MOZ_GR_MALLOC_H

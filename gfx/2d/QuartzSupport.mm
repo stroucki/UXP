@@ -18,7 +18,7 @@
 #define OPENGL_FRAMEWORK_PATH \
   "/System/Library/Frameworks/OpenGL.framework/OpenGL"
 #define COREGRAPHICS_FRAMEWORK_PATH \
-  "/System/Library/Frameworks/ApplicationServices.framework/Frameworks/CoreGraphics.framework/CoreGraphics"
+  "/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics"
 
 @interface CALayer (ContentsScale)
 - (double)contentsScale;

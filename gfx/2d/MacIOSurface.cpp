@@ -18,10 +18,10 @@ using namespace mozilla;
 #define OPENGL_FRAMEWORK_PATH \
   "/System/Library/Frameworks/OpenGL.framework/OpenGL"
 #define COREGRAPHICS_FRAMEWORK_PATH \
-  "/System/Library/Frameworks/ApplicationServices.framework/Frameworks/" \
+  "/System/Library/Frameworks/" \
   "CoreGraphics.framework/CoreGraphics"
 #define COREVIDEO_FRAMEWORK_PATH \
-  "/System/Library/Frameworks/ApplicationServices.framework/Frameworks/" \
+  "/System/Library/Frameworks/" \
   "CoreVideo.framework/CoreVideo"
 
 #define GET_CONST(const_name) \
@@ -190,14 +190,31 @@ void MacIOSurfaceLib::LoadLibrary() {
   isLoaded = true;
   sIOSurfaceFramework = dlopen(IOSURFACE_FRAMEWORK_PATH,
                             RTLD_LAZY | RTLD_LOCAL);
+  const char* err;
+  err = dlerror();
+  if (err) {
+    fprintf(stderr, "dlopen: %s\n", err);
+  }
   sOpenGLFramework = dlopen(OPENGL_FRAMEWORK_PATH,
                             RTLD_LAZY | RTLD_LOCAL);
+  err = dlerror();
+  if (err) {
+    fprintf(stderr, "dlopen: %s\n", err);
+  }
 
   sCoreGraphicsFramework = dlopen(COREGRAPHICS_FRAMEWORK_PATH,
                             RTLD_LAZY | RTLD_LOCAL);
+  err = dlerror();
+  if (err) {
+    fprintf(stderr, "dlopen: %s\n", err);
+  }
 
   sCoreVideoFramework = dlopen(COREVIDEO_FRAMEWORK_PATH,
                             RTLD_LAZY | RTLD_LOCAL);
+  err = dlerror();
+  if (err) {
+    fprintf(stderr, "dlopen: %s\n", err);
+  }
 
   if (!sIOSurfaceFramework || !sOpenGLFramework || !sCoreGraphicsFramework ||
       !sCoreVideoFramework) {
