@@ -227,6 +227,7 @@ CanPlayStatus
 CanHandleMediaType(const MediaContentType& aType,
                    DecoderDoctorDiagnostics* aDiagnostics)
 {
+  // XXXstroucki intercept here to debug codec support
   MOZ_ASSERT(NS_IsMainThread());
 
   if (aType.HaveCodecs()) {
